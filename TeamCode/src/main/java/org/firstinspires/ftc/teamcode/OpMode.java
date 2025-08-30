@@ -2,10 +2,8 @@ package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
-import com.qualcomm.robotcore.hardware.DcMotor;
-import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.Servo;
-import com.qualcomm.robotcore.util.ElapsedTime;
+
 
 @Autonomous(name = "Sample")
 public class OpMode extends LinearOpMode {
@@ -15,7 +13,7 @@ public class OpMode extends LinearOpMode {
         COUNTS_PER_REV(500);
 
         private final double value;
-        private EncoderVals(double value) {
+        EncoderVals(double value) {
             this.value = value;
         }
 
@@ -68,6 +66,7 @@ public class OpMode extends LinearOpMode {
         backRight.setTarget(INITIAL_DRIVE_POS);
         backRight.toPosition();
         claw.setPosition(INITIAL_CLAW_POS);
+        arm.setTarget(INITIAL_ARM_POS);
         arm.toPosition();
 
         waitForStart();
